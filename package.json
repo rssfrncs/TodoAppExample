@@ -3,7 +3,8 @@
   "description": "My webpack project",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
-    "start": "cross-env NODE_ENV=development webpack-dev-server"
+    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "e2e": "testcafe chrome ./e2e/index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
