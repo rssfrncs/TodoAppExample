@@ -47,3 +47,5 @@ Make sure you have Chrome installed or change the browser in `package.json` and 
 * Also I would memoize any of complex functions to ensure they are not run excessively when producing the same value as the previous run.
 
 * In terms of styling I would have preferred to have used something like styled-components or maybe even try out Emotion and it's CSS prop (not sure how it works with TypeScript mind), but for speed I went with css-in-js using the style attribute. Although I did at least extract some common values to a constant.
+
+* File structure is minimal. Personally I don't shy away from large files so long as everything is related, which in the case of this tiny app it is! In a "real" app with potential routing I would look at what components could be re-used and attempt to make them generic and extract.
