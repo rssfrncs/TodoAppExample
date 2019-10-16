@@ -1,6 +1,4 @@
-# ForgeRock task
-
-Created on 16/10/2019 by Ross Francis
+# Created on 16/10/2019 by Ross Francis
 
 ## Getting started
 
