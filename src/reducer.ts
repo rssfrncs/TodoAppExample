@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
 import produce from "immer";
-import { sortBy } from "lodash/fp";
 
+// I love this trick so much. God bless string unions!
 export const priorities = ["lifeChanging", "important", "meh"] as const;
 export type Priority = typeof priorities[number];
 
