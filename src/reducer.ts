@@ -67,20 +67,7 @@ export const reducer: Reducer<State, Action> = (
   });
 };
 
-const priorityRanking: { [key in Priority]: number } = {
-  meh: 2,
-  important: 1,
-  lifeChanging: 0
-};
-
-export const getSortedTodos = (todos: { [id: string]: Todo }) => {
-  return Object.keys(todos).sort((a, b) => {
-    const aTodo = priorityRanking[todos[a].priority];
-    const bTodo = priorityRanking[todos[b].priority];
-    return aTodo < bTodo ? -1 : 1;
-  });
-};
-
+// If this was real i'd probably memoize it.
 export const getTodosByPriorityType = (
   todos: { [id: string]: Todo },
   priority: Priority
