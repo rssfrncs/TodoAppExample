@@ -5,7 +5,7 @@ import { DndProvider } from "react-dnd";
 import html5 from "react-dnd-html5-backend";
 import { persistor, store } from "./store";
 import { Provider } from "react-redux";
-import { priorities, Priority, getTodosByPriorityType } from "./reducer";
+import { priorities, Priority } from "./reducer";
 import { TodoContainer, TodoList } from "./Todo";
 import { Create, Clear } from "./Management";
 
