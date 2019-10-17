@@ -14,9 +14,13 @@ Run `yarn run start`.
 
 Run `yarn run build` and once finished run a web server that can serve static files (such as http-server on npm) from `/dist`.
 
-### Run e2e tests using TestCafe
+### Run e2e tests
 
-Make sure you have Chrome installed or change the browser in `package.json` and run `yarn run e2e`.
+The application has a small set of e2e tests written using TestCafe.
+
+Make sure you have Chrome installed or change the specified browser (or browsers if you desire) in `package.json`.
+
+Run `yarn run e2e`.
 
 ## Application details
 
@@ -32,9 +36,11 @@ Make sure you have Chrome installed or change the browser in `package.json` and 
 
 ## Design
 
+- Instead of going with a pre-made solution such as create-react-app I scaffolded the webpack.config using webpack-cli and made some major modifications. I like to write as much of my configuration by hand to ensure that I have a full understanding of the build process (same for babel, eslint etc.).
+
 - I used TypeScript because I'm comfortable with it and like the reassurance it gives me.
 
-  - You'll notice in the state design a neat trick which allows you to define a string union from an actual array of strings. I really like using string unions and avoid enums like the plague.
+  - You'll notice in the reducer state type a "neat" trick which allows one to infer a string union from an actual array of strings. I prefer string unions to enums as you can work with strings (less imports) whilst having complete type safety + intellisense.
 
 * I selected Redux mainly for it's middleware ability. I was able to integrate redux-persist middleware to provide persistence (localStorage) to the application with just a few lines of configuration code. However, I also prefer to model my state with reducers as I find that it leads to  code that is easier to understand and modify - there is an argument that reducers along with actions add boilerplate but I'd counter argue that you shouldn't trade brevity for clarity!
 
