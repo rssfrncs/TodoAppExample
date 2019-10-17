@@ -18,6 +18,8 @@ Run `yarn run build` and once finished run a web server that can serve static fi
 
 The application has a small set of e2e tests written using TestCafe.
 
+The tests can be run against either dev or production but the site must be located at http://127.0.0.1:8080.
+
 Make sure you have Chrome installed or change the specified browser (or browsers if you desire) in `package.json`.
 
 Run `yarn run e2e`.
