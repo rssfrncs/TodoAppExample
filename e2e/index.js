@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-fixture`ForgeRock Todo app`.page`http://127.0.0.1:8080`;
+fixture`Todo app`.page`http://127.0.0.1:8080`;
 
 const createTodo = async t => {
   // create our new todo
