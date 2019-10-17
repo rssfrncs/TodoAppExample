@@ -47,6 +47,8 @@ Run `yarn run e2e`.
 * I selected Redux mainly for it's middleware ability. I was able to integrate redux-persist middleware to provide persistence (localStorage) to the application with just a few lines of configuration code. However, I also prefer to model my state with reducers as I find that it leads to  code that is easier to understand and modify - there is an argument that reducers along with actions add boilerplate but I'd counter argue that you shouldn't trade brevity for clarity!
 
   - I'd say the actions (the few there are) are "okay" in terms of action hygeine. In a larger more complicated app, I like to treat my actions as events as much as possible (you can't avoid data fetching setters) as I believe this reduces boilerplate and works well with something like redux-saga for orchestrating side-effects.
+  
+  - I make use of immer.js to allow locally scoped mutation such as `delete object[id]` or `todos[id] = ...`. This makes the reducer code much easier to read whilst remaining immutable.
 
 * If I was expecting large datasets I would make use of virtual lists to ensure that I am rendering the minimal amount of DOM nodes possible.
 
