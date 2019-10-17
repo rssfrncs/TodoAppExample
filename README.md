@@ -36,14 +36,14 @@ Make sure you have Chrome installed or change the browser in `package.json` and 
 
   - You'll notice in the state design a neat trick which allows you to define a string union from an actual array of strings. I really like using string unions and avoid enums like the plague.
 
-* I used Redux mainly because even in simple apps you're often surprised by the amount of shared state. Really it probably would have been faster and smaller to use React.useReducer and context in a similar fashion.
+* I selected Redux mainly for it's middleware ability. I was able to integrate redux-persist middleware to provide persistence (localStorage) to the application with just a few lines of configuration code. However, I also prefer to model my state with reducers as I find that it leads to  code that is easier to understand and modify - there is an argument that reducers along with actions add boilerplate but I'd counter argue that you shouldn't trade brevity for clarity!
 
   - I'd say the actions (the few there are) are "okay" in terms of action hygeine. In a larger more complicated app, I like to treat my actions as events as much as possible (you can't avoid data fetching setters) as I believe this reduces boilerplate and works well with something like redux-saga for orchestrating side-effects.
 
-* If this was a "real" application and I was expecting large datasets I would definitely make use of virtual lists to ensure I am rendering the minimal amount of DOM nodes possible.
+* If I was expecting large datasets I would make use of virtual lists to ensure that I am rendering the minimal amount of DOM nodes possible.
 
-* Also I would memoize any of complex functions to ensure they are not run excessively when producing the same value as the previous run.
+* I would also memoize any complex functions to ensure that they are not excessively run when producing the same value as the previous run. 
 
-* In terms of styling I would have preferred to have used something like styled-components or maybe even try out Emotion and it's CSS prop (not sure how it works with TypeScript mind), but for speed I went with css-in-js using the style attribute. Although I did at least extract some common values to a constant.
+* For styling if I was expecting collaborators I would probably have gone withstyled-components or maybe even experiement with Emotion and it's CSS prop (not sure how it works with TypeScript mind). However, for speed of development I simply went with inline styles using the style attribute. Although I made sure to at least extract some common values to a constant.
 
-* File structure is minimal. Personally I don't shy away from large files so long as everything is related, which in the case of this tiny app it is! In a "real" app with potential routing I would look at what components could be re-used and attempt to make them generic and extract.
+* File structure is rather minimal. Although I am not one to shy away from larger files so long as everything is related, there just aren't too many comp! In a "real" more complex application, or in an environment where components are shared across projects I would look at what components could be made generic and extract them into a shared directory for re-use.
